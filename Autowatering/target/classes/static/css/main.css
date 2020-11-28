@@ -1,0 +1,24 @@
+h1{
+    color: #000080;
+}
+
+h2{
+    color: #ff6048;
+}
+
+table {
+    width: 300px;
+    border: 1px solid green;
+    margin: auto;
+}
+td {
+    text-align: center;
+}
+th {
+    height: 20%;
+    text-align: center;
+}
+
+button {
+    margin-top:20px;
+}

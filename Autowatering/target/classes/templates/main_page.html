@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>try to vote</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../../css/main.css" />
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">MAIN page</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+        </div>
+    </div>
+</nav>
+
+<div>
+    <form>
+        <blockquote class="blockquote text-center">
+            <p class="mb-0 h1 mt-4 mb-4">AutoWatering</p>
+            <p class="mb-0 h3 mt-4 mb-4">(+ weather station)</p>
+        </blockquote>
+
+    <div class="form-group">
+        <div class="form-row"></div>
+        <div class="form-row">
+        <table class="table table-striped">
+            <tr>
+                <th scope="col">PARAMETER</th>
+                <th scope="col">INDICATION</th>
+
+            </tr>
+            <tr>
+                <td>id</td>
+                <td th:text="${myVar.getId()}"></td>
+            </tr>
+            <tr>
+                <td>pressure</td>
+                <td th:text="${myVar.getPressure()}"></td>
+            </tr>
+            <tr>
+                <td>temperature</td>
+                <td th:text="${myVar.getAir_temperature()}"></td>
+            </tr>
+            <tr>
+                <td>air_humidity</td>
+                <td th:text="${myVar.getAir_humidity()}"></td>
+            </tr>
+            <tr>
+                <td>soil_humidity</td>
+                <td th:text="${myVar.getSoil_humidity()}"></td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td th:text="${myVar.getDate()}"></td>
+            </tr>
+        </table>
+        </div>
+        <div class="form-row"> </div>
+    </div>
+    </form>
+
+    <form th:action="@{/main_page.html}" method="post" th:object="${action}">
+    <div class="text-center">
+        <div class="mb-4">
+            <div class="text-center">
+                <button type="submit" name="forced" class="btn btn-primary mx-auto" th:onsubmit="*{forced}">Forced watering</button>
+            </div>
+            <div/>
+            <div class="text-center mb-2">
+                <button type="submit" name="disable" class="btn btn-primary mx-auto" th:onsubmit="*{disable}">Disable watering</button>
+            </div>
+            <div/>
+            <div class="text-center">
+                <button type="submit" name="resume" class="btn btn-primary mx-auto" th:onsubmit="*{resume}">Resume watering</button>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+
+<script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
